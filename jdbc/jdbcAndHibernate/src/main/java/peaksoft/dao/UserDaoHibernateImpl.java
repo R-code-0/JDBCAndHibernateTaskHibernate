@@ -30,7 +30,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.beginTransaction();
             session.save(new User(name,lastName,age));
             session.getTransaction().commit();
-            System.out.println("Student with name: " + name + " successfylly created!");
+            System.out.println("User with name: " + name + " successfylly created!");
         } catch (HibernateException h) {
             System.out.println(h.getMessage());
         }
@@ -44,7 +44,7 @@ public class UserDaoHibernateImpl implements UserDao {
             System.out.println(student);
             session.delete(student);
             session.getTransaction().commit();
-            System.out.println("Student with id: " + id + " successfully deleted!");
+            System.out.println("User with id: " + id + " successfully deleted!");
         } catch (HibernateException h) {
             System.out.println(h.getMessage());
         }
@@ -57,7 +57,7 @@ public class UserDaoHibernateImpl implements UserDao {
             List<User> student = session.createQuery("from User").getResultList();
             session.getTransaction().commit();
 
-            System.out.println(student.size() + " student(s) have(has) been found!");
+            System.out.println(student.size() + " user(s) have(has) been found!");
 
             return student;
         } catch (HibernateException h) {
