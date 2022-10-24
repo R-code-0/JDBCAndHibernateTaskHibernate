@@ -2,6 +2,8 @@ package peaksoft;
 
 import org.junit.Assert;
 import org.junit.Test;
+import peaksoft.dao.UserDao;
+import peaksoft.dao.UserDaoHibernateImpl;
 import peaksoft.model.User;
 import peaksoft.service.UserService;
 import peaksoft.service.UserServiceImpl;
@@ -10,7 +12,7 @@ import java.util.List;
 
 public class UserServiceTest {
 
-    private final UserService userService = new UserServiceImpl();
+    private final UserDao userService = new UserDaoHibernateImpl();
 
     private final String testName = "Kanat";
     private final String testLastName = "Subanov";
